@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+    <h1>Contact Form</h1>
+    <form action="process.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]+"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>My Favorite Hobby: Reading</h2>
+    <section>
+        <h3>Embedded YouTube Video</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        <h3>Embedded Audio File</h3>
+        <audio controls>
+            <source src="your_audio_file.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="controls">
+            <button id="play-pause-video">Play/Pause Video</button>
+            <input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+        </div>
+    </section>
+    <script>
+        const video = document.querySelector('iframe');
+const audio = document.querySelector('audio');
+const playPauseButton = document.getElementById('play-pause-video');
+const volumeControl = document.getElementById('volume-control');
+
+playPauseButton.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+        audio.play();
+    } else {
+        video.pause();
+        audio.pause();
+    }
+});
+
+volumeControl.addEventListener('input', () => {
+    video.volume = volumeControl.value;
+    audio.volume = volumeControl.value;
+});
+    </script>
+</body>
+</html>
